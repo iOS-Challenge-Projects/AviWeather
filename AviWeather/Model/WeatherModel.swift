@@ -20,10 +20,10 @@ struct Report: Codable {
 
 struct Conditions: Codable {
     let text: String
-    let tempC: Double?
+    let tempC: Double
     let lat: Float
     let lon: Float
-
+    let dateIssued: String
 }
 
 

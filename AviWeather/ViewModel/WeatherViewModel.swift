@@ -24,10 +24,11 @@ class WeatherViewModel {
     var initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
     var weatherData: Weather?
     var selectedAirport: Airport?
+    var shouldFetchUpdate = UserDefaults.standard.bool(forKey: "shouldFetchUpdate")
     
     lazy var fetchResultsController: NSFetchedResultsController<Airport> = {
         let fetchRequest: NSFetchRequest<Airport> = Airport.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "airportName", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "isFavorite", ascending: false)]
         
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "isFavorite", cacheName: nil)
@@ -43,12 +44,12 @@ class WeatherViewModel {
     // MARK: - Network Methods
     func fetchWeather(for city: String) {
         //Call local JSON data sample
-        let mockDataLoader: NetworkLoader = MockDataLoader(data: weatherJSON!)
+        //let mockDataLoader: NetworkLoader = MockDataLoader(data: weatherJSON!)
         //Call API
-        //let realDataLoader: NetworkLoader =  URLSession.shared
+        let realDataLoader: NetworkLoader =  URLSession.shared
         
         //Pass fake or real api call
-        let network = Network(loader: mockDataLoader)
+        let network = Network(loader: realDataLoader)
         
         network.fetchWeather(for: city) { weather, error in
             if let error = error {
@@ -58,14 +59,25 @@ class WeatherViewModel {
             print("Success")
             if let weather = weather {
                 self.weatherData = weather
-                self.prepareDetailData()
+                self.saveWeatherToCoreData()
+                self.prepareMapData()
                 self.delegate?.fetchDataReady()
             }
         }
     }
     
+    func autoFetch() {
+        fetchWeather(for: selectedAirport!.airportName!)
+    }
+    
+    func weatherDateFormatter(for date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        return formatter.string(from: date)
+    }
+    
     // MARK: - Private Methods
-    private func prepareDetailData() {
+    private func prepareMapData() {
         guard let weather = weatherData else {  return }
         
         let lat = CLLocationDegrees(weather.report.conditions.lat)
@@ -75,7 +87,25 @@ class WeatherViewModel {
     
     // MARK: - CoreData Methods
     func addNewAirport(name airportName: String) {
+        //TODO: Check if the given entry is already a CoreData object to preven duplicates
         selectedAirport = Airport(airportName: airportName)
+        saveToPersistentStore()
+    }
+    
+    func saveWeatherToCoreData() {
+        
+        guard let data = weatherData else { return }
+        let conditions = data.report.conditions
+        let forecast = data.report.conditions
+        let weatherConditions = WeatherConditions(text: conditions.text,
+                                                  lon: conditions.lon,
+                                                  lat: conditions.lat,
+                                                  tempC: conditions.tempC)
+        let weatherForecast = WeatherForecast(text: forecast.text,
+                                              lon: forecast.lon,
+                                              lat: forecast.lat )
+        selectedAirport?.weatherConditions = weatherConditions
+        selectedAirport?.weatherForecast = weatherForecast
         saveToPersistentStore()
     }
     
@@ -98,11 +128,11 @@ class WeatherViewModel {
     }
     
     func saveToPersistentStore() {
-    do{
-        try moc.save()
-    }catch{
-        print("Error saving data to core data: \(error)")
+        do{
+            try moc.save()
+        }catch{
+            print("Error saving data to core data: \(error)")
+        }
     }
-}
 }
 

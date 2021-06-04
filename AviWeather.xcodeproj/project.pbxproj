@@ -11,6 +11,8 @@
 		0401F6142667D95800D9798F /* AirportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401F6132667D95800D9798F /* AirportTableViewCell.swift */; };
 		042884BC2669062F00E535FD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042884BB2669062F00E535FD /* CoreDataStack.swift */; };
 		042884C326690CF000E535FD /* Airport+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042884C226690CF000E535FD /* Airport+Convenience.swift */; };
+		04470322266A963D004020F1 /* WeatherConditions+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04470321266A963D004020F1 /* WeatherConditions+Convenience.swift */; };
+		04470325266A9656004020F1 /* WeatherForecast+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04470324266A9656004020F1 /* WeatherForecast+Convenience.swift */; };
 		045E013F266A08A60030F10B /* MockJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E013E266A08A50030F10B /* MockJSON.swift */; };
 		045E0143266A0E8B0030F10B /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E0142266A0E8B0030F10B /* MockDataLoader.swift */; };
 		046117DC2667483200D28CFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046117DB2667483200D28CFB /* AppDelegate.swift */; };
@@ -31,6 +33,8 @@
 		0401F6132667D95800D9798F /* AirportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportTableViewCell.swift; sourceTree = "<group>"; };
 		042884BB2669062F00E535FD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		042884C226690CF000E535FD /* Airport+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Airport+Convenience.swift"; sourceTree = "<group>"; };
+		04470321266A963D004020F1 /* WeatherConditions+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherConditions+Convenience.swift"; sourceTree = "<group>"; };
+		04470324266A9656004020F1 /* WeatherForecast+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherForecast+Convenience.swift"; sourceTree = "<group>"; };
 		045E013E266A08A50030F10B /* MockJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJSON.swift; sourceTree = "<group>"; };
 		045E0142266A0E8B0030F10B /* MockDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
 		046117D82667483200D28CFB /* AviWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +68,8 @@
 			children = (
 				042884BB2669062F00E535FD /* CoreDataStack.swift */,
 				042884C226690CF000E535FD /* Airport+Convenience.swift */,
+				04470321266A963D004020F1 /* WeatherConditions+Convenience.swift */,
+				04470324266A9656004020F1 /* WeatherForecast+Convenience.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -227,10 +233,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C8FE91266785F200D423A5 /* networkHelper.swift in Sources */,
+				04470325266A9656004020F1 /* WeatherForecast+Convenience.swift in Sources */,
 				042884C326690CF000E535FD /* Airport+Convenience.swift in Sources */,
 				045E0143266A0E8B0030F10B /* MockDataLoader.swift in Sources */,
 				046117F4266778E400D28CFB /* WeatherViewModel.swift in Sources */,
 				0401F60B2667A5B400D9798F /* SearchViewController.swift in Sources */,
+				04470322266A963D004020F1 /* WeatherConditions+Convenience.swift in Sources */,
 				04C8FE8E26677FDF00D423A5 /* Network.swift in Sources */,
 				046117DC2667483200D28CFB /* AppDelegate.swift in Sources */,
 				042884BC2669062F00E535FD /* CoreDataStack.swift in Sources */,
@@ -397,7 +405,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.productions.fritzgt.AviWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -417,7 +425,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.productions.fritzgt.AviWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

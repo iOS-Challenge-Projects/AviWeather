@@ -26,11 +26,6 @@ class SearchViewController: UIViewController, UITableViewDelegate {
         viewModel.setInitialData()
         tableView.rowHeight = 44
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        tableView.reloadData()
-    }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,8 +73,6 @@ extension SearchViewController: UITableViewDataSource {
             viewModel.deleteFromCoreData(for: indexPath)
         }
     }
-    
-    
 }
 
 // MARK: - UISearchBarDelegate
