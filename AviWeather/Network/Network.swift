@@ -19,7 +19,6 @@ enum HTTPMethod: String {
 class Network: NSObject {
     //Real network call
     private let loader: NetworkLoader
-    
 
     
     init(loader: NetworkLoader){

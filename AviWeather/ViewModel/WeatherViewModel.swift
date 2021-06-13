@@ -56,6 +56,10 @@ class WeatherViewModel {
                 print("Error: \(error)")
                 return
             }
+            
+            //Check internet connection, if none try to load data from CoreData
+            
+            
             print("Success")
             if let weather = weather {
                 self.weatherData = weather

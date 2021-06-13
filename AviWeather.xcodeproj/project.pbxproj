@@ -22,11 +22,22 @@
 		046117E82667483600D28CFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046117E62667483600D28CFB /* LaunchScreen.storyboard */; };
 		046117F4266778E400D28CFB /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046117F3266778E400D28CFB /* WeatherViewModel.swift */; };
 		046117F62667791700D28CFB /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046117F52667791700D28CFB /* WeatherModel.swift */; };
+		049B8BA82675F52E00B89F11 /* AviWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B8BA72675F52E00B89F11 /* AviWeatherTests.swift */; };
 		04BCC7DD26692C3A003A739D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04BCC7DB26692C3A003A739D /* Model.xcdatamodeld */; };
 		04C8FE8E26677FDF00D423A5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8FE8D26677FDF00D423A5 /* Network.swift */; };
 		04C8FE91266785F200D423A5 /* networkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8FE90266785F200D423A5 /* networkHelper.swift */; };
 		04C8FE95266791F100D423A5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8FE94266791F100D423A5 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		049B8BAA2675F52E00B89F11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 046117D02667483200D28CFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 046117D72667483200D28CFB;
+			remoteInfo = AviWeather;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0401F60A2667A5B400D9798F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +57,9 @@
 		046117E92667483600D28CFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		046117F3266778E400D28CFB /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		046117F52667791700D28CFB /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		049B8BA52675F52E00B89F11 /* AviWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AviWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		049B8BA72675F52E00B89F11 /* AviWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviWeatherTests.swift; sourceTree = "<group>"; };
+		049B8BA92675F52E00B89F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04BCC7DC26692C3A003A739D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		04C8FE8D26677FDF00D423A5 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		04C8FE90266785F200D423A5 /* networkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkHelper.swift; sourceTree = "<group>"; };
@@ -54,6 +68,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		046117D52667483200D28CFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		049B8BA22675F52E00B89F11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				046117DA2667483200D28CFB /* AviWeather */,
+				049B8BA62675F52E00B89F11 /* AviWeatherTests */,
 				046117D92667483200D28CFB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				046117D82667483200D28CFB /* AviWeather.app */,
+				049B8BA52675F52E00B89F11 /* AviWeatherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +174,15 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		049B8BA62675F52E00B89F11 /* AviWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				049B8BA72675F52E00B89F11 /* AviWeatherTests.swift */,
+				049B8BA92675F52E00B89F11 /* Info.plist */,
+			);
+			path = AviWeatherTests;
+			sourceTree = "<group>";
+		};
 		04C8FE8F26677FE300D423A5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,17 +214,39 @@
 			productReference = 046117D82667483200D28CFB /* AviWeather.app */;
 			productType = "com.apple.product-type.application";
 		};
+		049B8BA42675F52E00B89F11 /* AviWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 049B8BAE2675F52E00B89F11 /* Build configuration list for PBXNativeTarget "AviWeatherTests" */;
+			buildPhases = (
+				049B8BA12675F52E00B89F11 /* Sources */,
+				049B8BA22675F52E00B89F11 /* Frameworks */,
+				049B8BA32675F52E00B89F11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				049B8BAB2675F52E00B89F11 /* PBXTargetDependency */,
+			);
+			name = AviWeatherTests;
+			productName = AviWeatherTests;
+			productReference = 049B8BA52675F52E00B89F11 /* AviWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		046117D02667483200D28CFB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					046117D72667483200D28CFB = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					049B8BA42675F52E00B89F11 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 046117D72667483200D28CFB;
 					};
 				};
 			};
@@ -210,6 +264,7 @@
 			projectRoot = "";
 			targets = (
 				046117D72667483200D28CFB /* AviWeather */,
+				049B8BA42675F52E00B89F11 /* AviWeatherTests */,
 			);
 		};
 /* End PBXProject section */
@@ -222,6 +277,13 @@
 				046117E82667483600D28CFB /* LaunchScreen.storyboard in Resources */,
 				046117E52667483600D28CFB /* Assets.xcassets in Resources */,
 				046117E32667483200D28CFB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		049B8BA32675F52E00B89F11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +313,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		049B8BA12675F52E00B89F11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				049B8BA82675F52E00B89F11 /* AviWeatherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		049B8BAB2675F52E00B89F11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 046117D72667483200D28CFB /* AviWeather */;
+			targetProxy = 049B8BAA2675F52E00B89F11 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		046117E12667483200D28CFB /* Main.storyboard */ = {
@@ -429,6 +507,48 @@
 			};
 			name = Release;
 		};
+		049B8BAC2675F52E00B89F11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N3P8URX7UV;
+				INFOPLIST_FILE = AviWeatherTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fgt.AviWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AviWeather.app/AviWeather";
+			};
+			name = Debug;
+		};
+		049B8BAD2675F52E00B89F11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N3P8URX7UV;
+				INFOPLIST_FILE = AviWeatherTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fgt.AviWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AviWeather.app/AviWeather";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -446,6 +566,15 @@
 			buildConfigurations = (
 				046117ED2667483600D28CFB /* Debug */,
 				046117EE2667483600D28CFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		049B8BAE2675F52E00B89F11 /* Build configuration list for PBXNativeTarget "AviWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				049B8BAC2675F52E00B89F11 /* Debug */,
+				049B8BAD2675F52E00B89F11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
